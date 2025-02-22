@@ -6,4 +6,8 @@ export default defineConfig({
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx"],
   },
+  base: "/next-birthday-protocol/",
+  build: {
+    outDir: "docs",
+  },
 });
