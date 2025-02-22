@@ -1,0 +1,44 @@
+.input-container {
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.input-label {
+  color: #00ffff;
+  display: block;
+  margin-bottom: 15px;
+  text-shadow: 0 0 5px #00ffff;
+  animation: labelFloat 3s infinite;
+}
+
+.date-input {
+  padding: 12px;
+  background: #1a1a1a;
+  border: 2px solid #00ffff;
+  color: #fff;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+  }
+}
+
+@keyframes labelFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
