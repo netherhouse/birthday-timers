@@ -4,7 +4,7 @@ import DateInput from "./components/DateInput";
 import "./styles/App.scss";
 
 const App: React.FC = () => {
-  const [birthDate, setBirthDate] = useState<string>("2000-01-01");
+  const [birthDate, setBirthDate] = useState<string>("2002-09-11");
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -42,7 +42,6 @@ const App: React.FC = () => {
   return (
     <div className="app-container">
       <div className="cyber-grid" />
-      <div className="scanner-line" />
       <div className="timer-container">
         <h1 className="title">NEXT BIRTHDAY PROTOCOL</h1>
         <TimerDisplay timeLeft={timeLeft} />
