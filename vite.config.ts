@@ -6,8 +6,8 @@ export default defineConfig({
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx"],
   },
-  base: "/next-birthday-protocol/",
+  base: "./", // Убедитесь, что базовый путь корректен для GitHub Pages
   build: {
-    outDir: "docs",
+    outDir: "docs", // Явно указываем выходную директорию
   },
 });
