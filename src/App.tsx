@@ -4,7 +4,7 @@ import DateInput from "./components/DateInput";
 import "./styles/App.scss";
 
 const App: React.FC = () => {
-  const [birthDate, setBirthDate] = useState<string>("2002-11-09");
+  const [birthDate, setBirthDate] = useState<string>("2000-01-01");
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -12,26 +12,26 @@ const App: React.FC = () => {
     seconds: 0,
   });
 
-  const calculateTimeLeft = () => {
-    const now = new Date();
-    let nextBirthday = new Date(birthDate);
-    nextBirthday.setFullYear(now.getFullYear());
-
-    if (nextBirthday < now) {
-      nextBirthday.setFullYear(now.getFullYear() + 1);
-    }
-
-    const difference = nextBirthday.getTime() - now.getTime();
-
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
-  };
-
   useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const nextBirthday = new Date(birthDate);
+      nextBirthday.setFullYear(now.getFullYear());
+
+      if (nextBirthday < now) {
+        nextBirthday.setFullYear(now.getFullYear() + 1);
+      }
+
+      const difference = nextBirthday.getTime() - now.getTime();
+
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    };
+
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
