@@ -1,5 +1,5 @@
 .input-container {
-  margin-top: 40px;
+  margin-top: 25px; // Уменьшено для мобильных
   text-align: center;
   position: relative;
 }
@@ -7,19 +7,21 @@
 .input-label {
   color: #00ffff;
   display: block;
-  margin-bottom: 15px;
+  margin-bottom: 10px; // Уменьшено для мобильных
   text-shadow: 0 0 5px #00ffff;
   animation: labelFloat 3s infinite;
 }
 
 .date-input {
-  padding: 12px;
+  padding: 10px; // Уменьшено для мобильных
   background: #1a1a1a;
   border: 2px solid #00ffff;
   color: #fff;
   border-radius: 5px;
   font-family: "Courier New", monospace;
   cursor: pointer;
+  width: 100%; // Занимает всю доступную ширину на мобильных
+  max-width: 250px; // Ограничение ширины
   transition: all 0.3s;
 
   &:hover {
@@ -30,6 +32,22 @@
   &:focus {
     outline: none;
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  .input-container {
+    margin-top: 20px;
+  }
+
+  .input-label {
+    font-size: 0.9rem; // Уменьшено для мобильных
+    margin-bottom: 8px;
+  }
+
+  .date-input {
+    padding: 8px;
+    max-width: 200px;
   }
 }
 

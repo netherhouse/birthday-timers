@@ -26,23 +26,42 @@ body {
 
 .timer-container {
   position: relative;
-  padding: 40px;
+  padding: 20px; // Уменьшено для мобильных
   background: rgba(0, 0, 0, 0.9);
   border: 2px solid #00ffff;
   box-shadow: 0 0 30px rgba(0, 255, 255, 0.4),
     inset 0 0 10px rgba(0, 255, 255, 0.2);
   border-radius: 10px;
   animation: containerPulse 2s infinite;
+  width: 90%; // Ограничение ширины для мобильных
+  max-width: 400px; // Максимальная ширина для компактности
 }
 
 .title {
   color: #00ffff;
   text-shadow: 0 0 5px #00ffff, 0 0 15px #ff00ff;
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 2.2rem;
-  letter-spacing: 3px;
+  margin-bottom: 20px; // Уменьшено для мобильных
+  font-size: 1.5rem; // Уменьшено для мобильных
+  letter-spacing: 2px; // Уменьшено для мобильных
   animation: flicker 1.5s infinite;
+}
+
+@media (max-width: 768px) {
+  .timer-container {
+    padding: 15px;
+    width: 85%;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+
+  .cyber-grid {
+    background-size: 15px 15px; // Уменьшаем размер сетки для мобильных
+  }
 }
 
 @keyframes gridPulse {
